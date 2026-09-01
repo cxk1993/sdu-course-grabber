@@ -1,7 +1,13 @@
 # 去抢课吧 —— 山东大学选课/抢课辅助脚本（新版适配）
 
 > 适配自 [Grapedge/SDU-AddCourse](https://github.com/Grapedge/SDU-AddCourse)，GPL-3.0 许可。
-> 由汐瑶于 2026-09-01 完成新版统一认证适配，登录链路实测通过。
+> 新版统一认证适配：汐瑶（2026-09-01），登录链路实测通过。
+
+## 作者
+
+- **仓库维护：** [cxk1993](https://github.com/cxk1993)
+- **新版适配：** 汐瑶（Hermes Agent）
+- **原版作者：** [Grapedge](https://github.com/Grapedge)（Grapedge/SDU-AddCourse）
 
 ## 背景：老脚本为什么失效
 
