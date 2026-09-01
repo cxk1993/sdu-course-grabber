@@ -41,18 +41,21 @@ npm install --registry=https://registry.npmjs.org
 > ⚠️ 原项目的 package-lock.json 锁死了已停用的淘宝镜像（证书过期），
 > 已删除改用官方源，如遇安装问题先删 package-lock.json 再装。
 
-### 2. 配置
+### 2. 配置账号（关键）
 
-编辑 `index.js`：
+复制配置模板，填入自己的学号和密码：
+
+```bash
+cp config.local.example.js config.local.js
+```
+
+编辑 `config.local.js`（此文件已被 .gitignore 排除，不会泄露）：
 
 ```js
-const config = {
-  username: '学号',
-  password: '密码',
-  course: [
-    { kch: '课程号', kxh: '课序号' },
-    // 示例：{ kch: 'sd00130080', kxh: '0' }
-  ]
+module.exports = {
+  username: '你的学号',
+  password: '你的密码',
+  fingerprint: { ... }  // 首次运行自动绑定，无需手动填写
 };
 ```
 
@@ -62,7 +65,25 @@ const config = {
 node test-login.js
 ```
 
-### 4. 开始抢课
+- **首次使用**：会提示输入手机短信验证码完成设备绑定（一次性），之后免短信
+- 登录成功会显示平台页面标题和 HTTP 状态
+
+### 4. 配置要抢的课，开始抢课
+
+编辑 `index.js` 中的 `course` 列表：
+
+```js
+const config = {
+  username: local.username,  // 来自 config.local.js，无需改
+  password: local.password,  // 来自 config.local.js，无需改
+  course: [
+    { kch: '课程号', kxh: '课序号' },
+    // 示例：{ kch: 'sd00130080', kxh: '0' }
+  ]
+};
+```
+
+然后运行：
 
 ```bash
 node index.js
