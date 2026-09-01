@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "山东大学选课辅助脚本",
   "main": "index.js",
-  "author": "Grapedge",
+  "author": "Grapedge, cxk1993 (适配)",
   "license": "GPL-3.0",
   "dependencies": {
     "cookie": "^0.4.0",

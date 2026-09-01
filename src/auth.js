@@ -39,8 +39,7 @@ const getLoginData = async url => {
   const res = await fetch(url, {
     method: 'get',
     headers: {
-      'user-agent':
-        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+      'user-agent': 'Mozilla/5.0 (compatible; SDU-Course-Grabber/1.0)',
       'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
       'accept-language': 'zh-CN,zh;q=0.9'
     }
@@ -144,7 +143,7 @@ const login = async (username, password, from) => {
   // 跟随跳转（可能多级 302），返回最终可达的业务系统页面
   let cur = location[0];
   for (let i = 0; i < 6; i++) {
-    const r = await fetch(cur, { redirect: 'manual', headers: { 'user-agent': 'Mozilla/5.0' } });
+    const r = await fetch(cur, { redirect: 'manual', headers: { 'user-agent': 'Mozilla/5.0 (compatible; SDU-Course-Grabber/1.0)' } });
     const next = r.headers.raw()['location'];
     if (!next || !next[0]) {
       const finalText = await r.text();
